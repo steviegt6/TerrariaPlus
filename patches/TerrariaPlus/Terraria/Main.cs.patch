@@ -1,0 +1,16 @@
+--- src/Terraria/Terraria/Main.cs
++++ src/TerrariaPlus/Terraria/Main.cs
+@@ -37548,6 +_,13 @@
+ 					}
+ 
+ 					num25++;
++					array9[num25] = Language.GetTextValue(SettingDontScaleMainMenuUp ? "UI.SettingsDontScaleMainMenuUpOn" : "UI.SettingsDontScaleMainMenuUpOff");
++					if (selectedMenu == num25) {
++						SoundEngine.PlaySound(SoundID.MenuTick);
++						SettingDontScaleMainMenuUp = !SettingDontScaleMainMenuUp;
++					}
++
++					num25++;
+ 					array9[num25] = Language.GetTextValue("UI.Effects");
+ 					if (selectedMenu == num25) {
+ 						SoundEngine.PlaySound(11);
