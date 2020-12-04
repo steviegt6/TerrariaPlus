@@ -98,8 +98,8 @@ namespace Terraria.ModLoader.Setup
             this.buttonSetup.Size = new System.Drawing.Size(129, 23);
             this.buttonSetup.TabIndex = 0;
             this.buttonSetup.Text = "Setup";
-            this.toolTipButtons.SetToolTip(this.buttonSetup, "Complete environment setup for working on tModLoader source\r\nEquivalent to Decomp" +
-        "ile+Patch+SetupDebug\r\nEdit the source in src/tModLoader then run Diff tModLoader" +
+            this.toolTipButtons.SetToolTip(this.buttonSetup, "Complete environment setup for working on TerrariaPlus source\r\nEquivalent to Decomp" +
+        "ile+Patch+SetupDebug\r\nEdit the source in src/TerrariaPlus then run Diff TerrariaPlus" +
         " and commit the /patches folder");
             this.buttonSetup.UseVisualStyleBackColor = true;
             this.buttonSetup.Click += new System.EventHandler(this.buttonTask_Click);
@@ -154,8 +154,8 @@ namespace Terraria.ModLoader.Setup
             this.buttonPatchModLoader.Name = "buttonPatchModLoader";
             this.buttonPatchModLoader.Size = new System.Drawing.Size(129, 23);
             this.buttonPatchModLoader.TabIndex = 3;
-            this.buttonPatchModLoader.Text = "Patch tModLoader";
-            this.toolTipButtons.SetToolTip(this.buttonPatchModLoader, "Applies tModLoader patches to Terraria\r\nEdit the source code in src/tModLoader af" +
+            this.buttonPatchModLoader.Text = "Patch TerrariaPlus";
+            this.toolTipButtons.SetToolTip(this.buttonPatchModLoader, "Applies TerrariaPlus patches to Terraria\r\nEdit the source code in src/TerrariaPlus af" +
         "ter this phase\r\nInternally formats the Terraria sources before patching");
             this.buttonPatchModLoader.UseVisualStyleBackColor = true;
             this.buttonPatchModLoader.Click += new System.EventHandler(this.buttonTask_Click);
@@ -168,7 +168,7 @@ namespace Terraria.ModLoader.Setup
             this.buttonDiffModLoader.Name = "buttonDiffModLoader";
             this.buttonDiffModLoader.Size = new System.Drawing.Size(129, 23);
             this.buttonDiffModLoader.TabIndex = 5;
-            this.buttonDiffModLoader.Text = "Diff tModLoader";
+            this.buttonDiffModLoader.Text = "Diff TerrariaPlus";
             this.toolTipButtons.SetToolTip(this.buttonDiffModLoader, resources.GetString("buttonDiffModLoader.ToolTip"));
             this.buttonDiffModLoader.UseVisualStyleBackColor = true;
             this.buttonDiffModLoader.Click += new System.EventHandler(this.buttonTask_Click);
@@ -242,7 +242,7 @@ namespace Terraria.ModLoader.Setup
             this.toolsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.decompileServerToolStripMenuItem,
             this.formatCodeToolStripMenuItem,
-            this.hookGenToolStripMenuItem,
+            //this.hookGenToolStripMenuItem,
             this.simplifierToolStripMenuItem});
             this.toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
             this.toolsToolStripMenuItem.Size = new System.Drawing.Size(46, 20);
@@ -339,7 +339,7 @@ namespace Terraria.ModLoader.Setup
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.mainMenuStrip;
             this.Name = "MainForm";
-            this.Text = "tModLoader Dev Setup";
+            this.Text = "TerrariaPlus Dev Setup";
             this.mainMenuStrip.ResumeLayout(false);
             this.mainMenuStrip.PerformLayout();
             this.ResumeLayout(false);
