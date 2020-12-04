@@ -1,16 +1,46 @@
 --- src/Terraria/Terraria/Main.cs
 +++ src/TerrariaPlus/Terraria/Main.cs
-@@ -37548,6 +_,13 @@
- 					}
+@@ -2752,6 +_,9 @@
+ 		}
  
- 					num25++;
+ 		public static void InitializeItemAnimations() {
++			for (int l = 0; l < itemAnimations.Length; l++)
++				RegisterItemAnimation(l, new DrawAnimationVertical(int.MaxValue, 1));
++
+ 			for (int i = 0; i < itemAnimations.Length; i++) {
+ 				itemAnimations[i] = null;
+ 			}
+@@ -5014,6 +_,7 @@
+ 			SoundID.FillAccessMap();
+ 			Star.SpawnStars();
+ 			ItemSorting.SetupWhiteLists();
++			ResourcePack.Initialize();
+ #endif
+ 		}
+ 
+@@ -12221,6 +_,11 @@
+ 		}
+ 
+ 		public static void DoUpdate_AnimateItemIcons() {
++			for (int i = 0; i < itemAnimations.Length; i++)
++				if (itemAnimations[i] != null)
++					itemAnimations[i].Update();
++			return;
++
+ 			for (int i = 0; i < itemAnimationsRegistered.Count; i++) {
+ 				int num = itemAnimationsRegistered[i];
+ 				if (itemAnimations[num] != null)
+@@ -37545,6 +_,13 @@
+ 					if (selectedMenu == num25) {
+ 						SoundEngine.PlaySound(12);
+ 						SettingsEnabled_TilesSwayInWind = !SettingsEnabled_TilesSwayInWind;
++					}
++
++					num25++;
 +					array9[num25] = Language.GetTextValue(SettingDontScaleMainMenuUp ? "UI.SettingsDontScaleMainMenuUpOn" : "UI.SettingsDontScaleMainMenuUpOff");
 +					if (selectedMenu == num25) {
 +						SoundEngine.PlaySound(SoundID.MenuTick);
 +						SettingDontScaleMainMenuUp = !SettingDontScaleMainMenuUp;
-+					}
-+
-+					num25++;
- 					array9[num25] = Language.GetTextValue("UI.Effects");
- 					if (selectedMenu == num25) {
- 						SoundEngine.PlaySound(11);
+ 					}
+ 
+ 					num25++;

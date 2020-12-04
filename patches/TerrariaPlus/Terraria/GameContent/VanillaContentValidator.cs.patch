@@ -1,0 +1,15 @@
+--- src/Terraria/Terraria/GameContent/VanillaContentValidator.cs
++++ src/TerrariaPlus/Terraria/GameContent/VanillaContentValidator.cs
+@@ -13,10 +_,10 @@
+ 			public int Height;
+ 
+ 			public bool Matches(Texture2D texture, out IRejectionReason rejectReason) {
+-				if (texture.Width != Width || texture.Height != Height) {
++				/*if (texture.Width != Width || texture.Height != Height) {
+ 					rejectReason = new ContentRejectionFromSize(Width, Height, texture.Width, texture.Height);
+ 					return false;
+-				}
++				}*/
+ 
+ 				rejectReason = null;
+ 				return true;

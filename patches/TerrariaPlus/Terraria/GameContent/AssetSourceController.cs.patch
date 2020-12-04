@@ -1,0 +1,34 @@
+--- src/Terraria/Terraria/GameContent/AssetSourceController.cs
++++ src/TerrariaPlus/Terraria/GameContent/AssetSourceController.cs
+@@ -3,6 +_,7 @@
+ using System;
+ using System.Collections.Generic;
+ using System.Linq;
++using Terraria.ID;
+ using Terraria.IO;
+ 
+ namespace Terraria.GameContent
+@@ -26,6 +_,13 @@
+ 		}
+ 
+ 		public void Refresh() {
++			Main.npcFrameCount = ResourcePack.defaultNPCFrames;
++			Main.tileFrame = ResourcePack.defaultTileFrames;
++			Main.wallFrame = ResourcePack.defaultWallFrames;
++
++			for (int i = 0; i < ItemID.Count; i++)
++				Main.itemAnimations[i] = ResourcePack.defaultItemFrames[i];
++
+ 			foreach (ResourcePack allPack in ActiveResourcePackList.AllPacks) {
+ 				allPack.Refresh();
+ 			}
+@@ -36,6 +_,9 @@
+ 		public void UseResourcePacks(ResourcePackList resourcePacks) {
+ 			if (this.OnResourcePackChange != null)
+ 				this.OnResourcePackChange(resourcePacks);
++
++			foreach (ResourcePack pack in resourcePacks.EnabledPacks)
++				pack.LoadFrames();
+ 
+ 			ActiveResourcePackList = resourcePacks;
+ 			List<IContentSource> list = new List<IContentSource>(from pack in resourcePacks.EnabledPacks

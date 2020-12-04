@@ -1,0 +1,20 @@
+--- src/Terraria/Terraria/IO/ResourcePack.cs
++++ src/TerrariaPlus/Terraria/IO/ResourcePack.cs
+@@ -10,7 +_,7 @@
+ 
+ namespace Terraria.IO
+ {
+-	public class ResourcePack
++	public partial class ResourcePack
+ 	{
+ 		public readonly string FullPath;
+ 		public readonly string FileName;
+@@ -119,6 +_,8 @@
+ 			Description = jObject["Description"].Value<string>();
+ 			Author = jObject["Author"].Value<string>();
+ 			Version = jObject["Version"].ToObject<ResourcePackVersion>();
++
++			LoadFrameManifest();
+ 		}
+ 
+ 		private Stream OpenStream(string fileName) {
